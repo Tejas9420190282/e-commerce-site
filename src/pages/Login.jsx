@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -24,14 +26,14 @@ function Login() {
 
             console.log("Logged in successfully!");
             
-            alert("Logged in successfully!");
+            toast.success("Logged in successfully!");
 
             navigate("/all");
 
         } catch (error) {
             
             console.log(`Error in Login : ${error.message}`);
-            alert(`Error in Login : ${error.message}`);
+            toast.error(`Error in Login : ${error.message}`);
         }        
     };
 

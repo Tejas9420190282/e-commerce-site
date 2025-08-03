@@ -16,9 +16,18 @@ import Serach_Product from "./pages/Serach_Product";
 import Protected_Routes from "./Protected_Routes";
 import My_Accout from "./pages/My_Accout";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={2000}
+                pauseOnHover={false}
+                theme="colored"
+            />
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/register" element={<Register />} />

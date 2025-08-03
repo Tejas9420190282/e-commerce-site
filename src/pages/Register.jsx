@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../firebase";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Register() {
     const [email, setEmail] = useState("");
@@ -22,13 +23,13 @@ function Register() {
 
             console.log("Account created successfully!");
             
-            alert("Account created successfully!");
+            toast.success("Account created successfully!");
             navigate("/");
 
         } catch (error) {
             
             console.log(`Error in Register : ${error.message}`);
-            alert(`Error in Register : ${error.message}`);
+            toast.error(`Error in Register : ${error.message}`);
         }
     };
 

@@ -3,6 +3,7 @@ import Navbar from "../component/Navbar";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 function Electronics() {
     const [electronics, setElectronics] = useState([]);
@@ -24,7 +25,7 @@ function Electronics() {
                     `Error in featch Allelectronics : ${error.message}`
                 );
 
-                alert(`Error in featch Allelectronics : ${error.message}`);
+                toast.error(`Error in featch Allelectronics : ${error.message}`);
             } finally {
                 setLoading(false);
             }
@@ -35,7 +36,7 @@ function Electronics() {
 
     const handleAddToCart = (product) => {
         dispath({ type: "ADD_TO_CART", payload: product });
-        alert("Product added to cart!");
+        toast.success("Product added to cart!");
     };
 
     return (

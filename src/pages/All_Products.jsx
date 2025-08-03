@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../component/Navbar";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 function All_Products() {
     const [products, setProducts] = useState([]);
@@ -24,7 +25,7 @@ function All_Products() {
             } catch (error) {
                 console.log(`Error in featch AllProduct : ${error.message}`);
 
-                alert(`Error in featch AllProduct : ${error.message}`);
+                toast.error(`Error in featch AllProduct : ${error.message}`);
             } finally {
                 setLoading(false);
             }
@@ -35,7 +36,7 @@ function All_Products() {
 
     const handleAddToCart = (product) => {
         dispath({ type: "ADD_TO_CART", payload: product });
-        alert("Product added to cart!");
+        toast.success("Product added to cart!");
     };
 
     return (

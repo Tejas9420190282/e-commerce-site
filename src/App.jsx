@@ -23,10 +23,12 @@ function App() {
     return (
         <>
             <ToastContainer
-                position="top-right"
+                position="bottom-center"
                 autoClose={2000}
                 pauseOnHover={false}
                 theme="colored"
+                limit={1}
+                style={{ zIndex: 9999 }}
             />
             <Routes>
                 <Route path="/" element={<Login />} />

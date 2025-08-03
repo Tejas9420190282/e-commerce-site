@@ -5,6 +5,7 @@ import Navbar from "../component/Navbar";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Cloths() {
     const [cloths, setCloths] = useState([]);
@@ -24,7 +25,7 @@ function Cloths() {
             } catch (error) {
                 console.log(`Error in featch AllCloths : ${error.message}`);
 
-                alert(`Error in featch AllCloths : ${error.message}`);
+                toast.error(`Error in featch AllCloths : ${error.message}`);
             } finally {
                 setLoading(false);
             }
@@ -36,7 +37,7 @@ function Cloths() {
     const handleAddToCart = (product) => {
         
         dispath({ type: "ADD_TO_CART", payload: product });
-        alert("Product added to cart!");
+        toast.success("Product added to cart!");
     };
 
     return (

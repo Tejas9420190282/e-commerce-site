@@ -5,11 +5,15 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Navbar from "../component/Navbar";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
 
 function Serach_products() {
     const [query, setQuery] = useState("");
 
     const [products, setproducts] = useState([]);
+
+    const dispath = useDispatch()
 
     useEffect(() => {
         const searchproducts = async () => {
@@ -22,12 +26,17 @@ function Serach_products() {
             } catch (error) {
                 console.error(`Error in searchproducts : ${error.message}`);
 
-                alert(`Error in searchproducts : ${error.message}`);
+                toast.error(`Error in searchproducts : ${error.message}`);
             }
         };
 
         searchproducts();
     }, [query]);
+
+    const handleAddToCart = (product) => {
+        dispath({ type: "ADD_TO_CART", payload: product });
+        toast.success("Product added to cart!");
+    };
 
     return (
         <>

@@ -73,7 +73,7 @@ const Navbar = () => {
             <span>0</span>
           </Link>
 
-          <button to={handleLogout} className="block hover:underline bg-red-500 p-3 rounded">Logout</button>
+          <button onClick={handleLogout} className="block hover:underline bg-red-500 p-3 rounded">Logout</button>
         </div>
       )}
     </nav>

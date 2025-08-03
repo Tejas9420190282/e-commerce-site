@@ -1,12 +1,39 @@
-# React + Vite
+# 🛒 React E-Commerce Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple e-commerce web application built with **React.js**, **Vite**, **TailwindCSS**, **Firebase Authentication**, and **Redux** for state management.
 
-Currently, two official plugins are available:
+> 🔗 [Live Demo](https://tejas-shimpi-react-e-commerce-task.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-   ✅ User authentication using Firebase
+-   ✅ Protected routes (only accessible after login)
+-   ✅ Product listing using Platzi's Fake Store API
+-   ✅ Add to cart functionality
+-   ✅ My Cart page
+-   ✅ Category filtering (Clothes, Electronics, Toys, etc.)
+-   ✅ Product search
+-   ✅ Responsive UI with TailwindCSS
+
+---
+
+## 🔧 Tech Stack
+
+-   **Frontend:** React.js, Vite
+-   **Styling:** Tailwind CSS
+-   **State Management:** Redux
+-   **Authentication:** Firebase Auth
+-   **API:** Platzi Fake Store API (https://fakeapi.platzi.com/)
+
+---
+
+## 🧪 Installation
+
+```bash
+git clone https://github.com/Tejas9420190282/e-commerce-site.git
+cd e-commerce-site
+npm install
+npm run dev
+```
